@@ -38,7 +38,7 @@ const sendVerifyMail = async(name, email, user_id)=>{
             from:"rahulbhingardeve744@gmail.com",
             to:email,
             subject:'For Verification mail',
-            html:'<p>Hii '+name+', please click here to <a href="http://127.0.0.1:3000/verify?id='+user_id+'"> Verify </a> your mail.</p>'
+            html:'<p>Hii '+name+', please click here to <a href="https://usermanamentsystem-1.onrender.com/verify?id='+user_id+'"> Verify </a> your mail.</p>'
         }
         transporter.sendMail(mailOptions, function(error,info){
             if(error){
@@ -74,7 +74,7 @@ const sendResetPasswordMail = async(name, email, token)=>{
             from:"rahulbhingardeve744@gmail.com",
             to:email,
             subject:'For Reset Password',
-            html:'<p>Hii '+name+', please click here to <a href="http://127.0.0.1:3000/forget-password?token='+token+'"> Reset </a> your password.</p>'
+            html:'<p>Hii '+name+', please click here to <a href="https://usermanamentsystem-1.onrender.com/forget-password?token='+token+'"> Reset </a> your password.</p>'
         }
         transporter.sendMail(mailOptions, function(error,info){
             if(error){
