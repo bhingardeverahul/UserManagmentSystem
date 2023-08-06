@@ -35,7 +35,7 @@ const sendResetPasswordMail = async(name, email, token)=>{
             auth:{
                 user:"rahulbhingardeve744@gmail.com",
                 pass:"orflgrnibhaxxyyj"
-            }
+            },
             service:"gmail",
         });
         const mailOptions = {
@@ -73,7 +73,7 @@ const addUserMail = async(name, email, password, user_id)=>{
             auth:{
                 user:"rahulbhingardeve744@gmail.com",
                 pass:"orflgrnibhaxxyyj"
-            }
+            },
             service:"gmail"
         });
         const mailOptions = {
