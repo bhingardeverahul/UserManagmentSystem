@@ -29,7 +29,6 @@ const sendResetPasswordMail = async(name, email, token)=>{
         const transporter = nodemailer.createTransport({
             host:'smtp.gmail.com',
             port:587,
-            service:"gmail",
             secure:false,
             requireTLS:true,
            
@@ -37,6 +36,7 @@ const sendResetPasswordMail = async(name, email, token)=>{
                 user:"rahulbhingardeve744@gmail.com",
                 pass:"orflgrnibhaxxyyj"
             }
+            service:"gmail",
         });
         const mailOptions = {
             from:"rahulbhingardeve744@gmail.com",
@@ -67,7 +67,6 @@ const addUserMail = async(name, email, password, user_id)=>{
         const transporter = nodemailer.createTransport({
             host:'smtp.gmail.com',
             port:587,
-           service:"gmail", 
             secure:false,
             requireTLS:true,
            
@@ -75,6 +74,7 @@ const addUserMail = async(name, email, password, user_id)=>{
                 user:"rahulbhingardeve744@gmail.com",
                 pass:"orflgrnibhaxxyyj"
             }
+            service:"gmail"
         });
         const mailOptions = {
             from:"rahulbhingardeve744@gmail.com",
