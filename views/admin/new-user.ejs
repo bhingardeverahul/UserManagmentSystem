@@ -1,0 +1,149 @@
+
+
+<% include('../layouts/header.ejs') %>
+<%- include('../layouts/navbar.ejs') %>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<h1 class="d-flex justify-content-center ">Add New User</h1>
+<div class="d-flex justify-content-lg-start ">
+  <a href="/admin/dashboard"><i class="fa-solid fa-backward"></i> Go Back</a>
+</div>
+<style>
+  .login-box {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box button:hover {
+  background: #03f40f;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03f40f,
+              0 0 25px #03f40f,
+              0 0 50px #03f40f,
+              0 0 100px #03f40f;
+}
+
+.login-box button span  {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box button span :nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03f40f);
+  animation: btn-anim1 2s linear infinite;
+}
+ </style>
+<body>
+  <div class="d-flex justify-content-center ">
+    
+    <% 
+  if(typeof message !== 'undefined'){
+    %>
+     <h4><%= message %></h4>
+     <%
+  }
+  
+  %>
+  </div>
+ 
+    <div class="login-box  margin-top-7px">
+      <form action="" method="POST" enctype="multipart/form-data">
+        <div class="user-box">
+         <input type="text" name="name" required="">
+         <label for="name">Name</label>
+         </div>
+         <div class="user-box">
+          <input type="email" name="email" required="">
+          <label for="email">Email</label>
+          </div>
+        <div class="user-box">
+          <input type="text" name="mobile" required="">
+          <label for="phone">Phone Number</label>
+          </div>
+          <label class="text-light" for="image">Images</label>
+          <div class="user-box">
+            <input type="file" name="image" required="">
+          </div>
+          <div class="user-box">
+            <input type="text" name="password" required="">
+            <label for="phone">Password</label>
+            </div>
+            <button type="submit" class="text-dark " value="add user" name="submit"> Add User <span></span>  </button>
+            </form>
+            </div>
+            </div>
+      <% include('../layouts/footer.ejs') %> 

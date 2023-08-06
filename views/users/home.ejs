@@ -1,0 +1,46 @@
+<% include('../layouts/header.ejs') %>
+    <%- include('../layouts/navbar.ejs') %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <h3 class="d-flex justify-content-center ">Welcome, <%= user.name %></h3>
+    <div class="d-flex justify-content-center ">
+        <tr >
+            <td ><img src="userImages/<%= user.image %>" width="130px" height="150px" alt="<%= user.image %>"></td>
+        </tr>
+    </div>
+    
+    <div class="d-flex justify-content-center mt-3 ">
+        <table  class="table table-primary table-hover w-50 h-50 ">
+            <tr>
+                <td>Email:-</td>
+                <td>
+                    <%= user.email %>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile:-</td>
+                <td>
+                    <%= user.mobile %>
+                </td>
+            </tr>
+            <tr>
+                <td>Verified:-</td>
+                <td>
+                    <% if(user.is_varified==1) { %>
+                        <p>✔<i class="fa-solid fa-badge-check"></i></p>
+                        <% } else{ %>
+                            <p>❌</p>
+                            <%}%>
+                        </td>
+            </tr>
+        </table>
+    </div>
+    <div class="d-flex justify-content-around ">
+        
+        <a href="/edit?id=<%= user._id %>"><i class="fas fa-edit fa-lg mx-1"></i> Edit</a>
+        
+        <a href="/delete?id=<%= user._id %>" class="text-danger"><i class="fas fa-trash fa-lg "></i> Delete</a>
+        
+    </div>
+        
+        <% include('../layouts/footer.ejs') %>

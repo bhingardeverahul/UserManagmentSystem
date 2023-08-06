@@ -1,0 +1,48 @@
+<% include('../layouts/header.ejs') %>
+<%-include('../layouts/navbar.ejs') %>
+<style>
+    form{
+       display: grid;
+       justify-content: center;
+       align-items:center ;
+       width :320px;
+       margin-top:30px;
+       border: 3px solid black;
+       padding: auto ;
+       border-radius: 7px;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+
+    }
+</style>
+<h1>Edit User</h1>
+<div class="d-flex justify-content-center ">
+
+    <form action="" method="POST">
+        <br>
+    <input type="name" name="name" placeholder="Enter Name" value="<%= user.name %>" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter Email" value="<%= user.email %>" required>
+    <br><br>
+    <input type="text" name="mno" placeholder="Enter Mobile" value="<%= user.mobile %>" required>
+    <br>
+    <label> Unverified 
+
+        <input type="radio" name="verify" value="1" <% if(user.is_varified == 1){ %> checked <% } %> >
+    </label>
+    
+    <label> Verified 
+        <input type="radio" name="verify" value="0" <% if(user.is_varified == 0){ %> checked <% } %>>
+    </label>
+    <input type="hidden" name="id" value="<%= user._id %>">
+    <br>
+    <input type="submit" value="Update User">
+    <br>
+</form>
+</div>
+
+<a href="/admin/">Go Dashboard</a>
+
+<% include('../layouts/footer.ejs') %>
