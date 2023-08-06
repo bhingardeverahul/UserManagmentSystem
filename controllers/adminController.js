@@ -29,7 +29,7 @@ const sendResetPasswordMail = async(name, email, token)=>{
         const transporter = nodemailer.createTransport({
             host:'smtp.gmail.com',
             port:587,
-            service,"gmail",
+            service:"gmail",
             secure:false,
             requireTLS:true,
            
@@ -67,7 +67,7 @@ const addUserMail = async(name, email, password, user_id)=>{
         const transporter = nodemailer.createTransport({
             host:'smtp.gmail.com',
             port:587,
-           service,"gmail", 
+           service:"gmail", 
             secure:false,
             requireTLS:true,
            
