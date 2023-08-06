@@ -27,13 +27,13 @@ const sendVerifyMail = async(name, email, user_id)=>{
         const transporter = nodemailer.createTransport({
             host:'smtp.gmail.com',
             port:587,
-            service:"gmail",
             secure:false,
             requireTLS:true,
             auth:{
                 user:"rahulbhingardeve744@gmail.com",
                 pass:"orflgrnibhaxxyyj"
-            }
+            },
+            service:"gmail",
         });
         const mailOptions = {
             from:"rahulbhingardeve744@gmail.com",
@@ -64,13 +64,13 @@ const sendResetPasswordMail = async(name, email, token)=>{
         const transporter = nodemailer.createTransport({
             host:'smtp.gmail.com',
             pport:587,
-            service:"gmail"
             secure:false,
             requireTLS:true,
             auth:{
                 user:"rahulbhingardeve744@gmail.com",
                 pass:"orflgrnibhaxxyyj"
-            }
+            },
+            service:"gmail",
         });
         const mailOptions = {
             from:"rahulbhingardeve744@gmail.com",
